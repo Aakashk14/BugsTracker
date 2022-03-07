@@ -1,0 +1,127 @@
+<html>
+<link rel="stylesheet" href="/header.css">
+    <style>
+        body {
+  margin: 0px;
+  overflow-x: hidden;
+}
+        .main{
+            position: sticky;
+            background-color: rgb(2, 16, 71);
+            top: 0;
+            height:60px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .bdy{
+            position: relative;
+            top:20%;
+            left:10%;
+            margin-top: -25px;
+        }
+        .bdy p {
+            display: inline-block;
+            background-color: rgb(77, 16, 105);
+            border-radius: 4px;
+            width:100px;
+            height: 50px;
+            text-align: center;
+            margin-top: 5px;
+            padding-top: 20px;
+            margin-left: 6px;
+            margin-bottom: 1px;
+        }
+        
+        .empty{
+            position: absolute;
+            display: block;
+            left:30%;
+            top:30%;
+            border-radius: 3px;
+            height:80px;
+            width: 400px;
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-style:ridge;
+        cursor: text;
+        outline: none;
+        overflow-y: auto;
+        }
+        .empty p {
+            position: relative;
+            left:40px;
+        }
+        #mainbtn{
+            background-color: rgb(35, 11, 100);
+            position:relative;
+            top:25%;
+            left:60%;
+            color: white;
+            border-radius: 2px;
+            border-top: 2px;
+            width: 200px;
+            height:40px;
+
+        }
+        .notice {
+            background-color: rgb(236, 231, 231);
+            width: 300px;
+            margin-left: 100px;
+            position: relative;
+            top:200px;
+            padding: 4px;
+            text-align: center;
+        }
+        #home{
+            position: absolute;
+            left:400px;
+            top:1px;
+            color: white;
+        }
+       
+    </style>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    $(document).ready(()=>{
+        $("#mainbtn").on('click',()=>{
+
+            
+
+        })
+  
+    </script>
+        <div class="main">
+
+            
+<p id="corner">BugsTracker</p>
+<p id="home" onclick="location.href='/home'">Home</p>
+<p id="message" onclick="location.href='/chat'">Messages</p>
+<p onclick="location.href='/logout'" id="logout">Log Out</p>
+<div class="about">
+  
+    
+    <p><%= name %></p>
+    
+</div>
+<% if(admin==1) { %>
+
+<div class="panel">
+            <p onclick="location.href='/panel'">Control Panel</p>
+        </div>
+<% } %>
+</div>
+      <div class="notice">
+        <p>Go <a href="/panel" >Control Panel</a> to add Agents</p>
+        
+        
+        </div>
+        
+        <input type="button" id="mainbtn" value="Create New Bug" onclick="location.href='/new'">
+        <input type="button" id="mainbtn" value="All Bugs" onclick="location.href='/Bugs'">
+
+    
+</body>
+</html>

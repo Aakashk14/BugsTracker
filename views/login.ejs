@@ -1,0 +1,159 @@
+<html>
+<body>
+    <style>
+        body{
+  background-color: rgb(35, 163, 249);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px rgb(192, 193, 196) inset !important;
+ -webkit-text-fill-color: yellow !important;
+}
+.main{
+   position: absolute;
+   display: inline-block;
+   top: 10%;
+   left: 22%;
+   height: 400px;
+   background-color: rgb(80, 114, 226);
+   width: 700px;
+   border-radius: 10px;
+}
+#input_type{
+   color: black;
+   position: relative;
+   left:200px;
+   top:50px;
+   display: block;
+   margin-bottom: 20px;
+   border-radius: 10px;
+   border-style: solid;
+   background-color: rgb(181, 176, 161);
+   width: 300px;
+   height: 50px;
+   outline: none;
+}
+
+#btn{
+   position: relative;
+   left: 550px;
+   top: 20px;
+}
+#login{
+width: 200px;
+height: 50px;
+text-align: center;
+
+}
+#btn,#submit{
+    display: block;
+    background-color: beige;
+width: 120px;
+height: 40px;
+}
+#help{
+    position: absolute;
+    left:20px;
+    color:rgb(29, 43, 122);
+
+}
+#submit{
+    position: absolute;
+    left:260px;
+    top:260px;
+    height: 40px;
+    
+    
+}
+#btn{
+    position: absolute;
+    left:560px;
+    top:550px;
+    width: 200px;
+    height:50px;
+    background-color: rgb(29, 43, 122);
+    font-family: arvo;
+}
+#note{
+    position: absolute;
+    bottom:1px;
+    font-weight: bold;
+}
+#fgetpassword{
+    position: relative;
+    top:60px;
+    left:240px;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+    </style>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+
+        $(document).ready(()=>{
+            $("#fgetpassword").on('click',()=>{
+                Swal.fire({
+                title:'Enter Email',
+                input:'text',
+
+            }).then((value)=>{
+                if(value.value.length >1 && value.value.indexOf("@")!=-1){
+
+                    $.ajax({
+                        url:"/forgetpassowrd",
+                        method:"POST",
+                        data:value,
+                        success:function(response){
+                            if(response=="1"){
+                                swal.fire("Changed")
+                            }else{
+                                swa.fire("Invalid Email")
+                            }
+                        }
+                    })
+
+                swal.fire("Ask your Admin to give you one time temporary password from Control Panel")
+            }else{
+                swal.fire("Empty/invalid format not allowed")
+            }
+        })
+    })
+            $("#help").on('click',function(){
+
+                Swal.fire({
+  
+  title: 'HOW-TO-DO',
+  html: "Signup As Admin <br> Create A Group  ,Invite a user <br> Ask user to signup as USER (Signup is needed as user from user email too)",
+
+                })})})
+
+     
+    </script>=
+
+
+<input  type="button" id="btn" onclick="location.href='/signup'" value="Signup">
+
+<div class="main"></p>
+    <a href="#" id="help">Need Help?</a>
+
+
+    
+    
+   
+<form method="post" action="/login">
+    <input type="text" id="input_type" placeholder="Email" name="email">
+    <input type="password" id="input_type" placeholder="Password" name="password"> 
+     <input type="submit" value="Login" id="submit">
+     <p id="fgetpassword">Forget Password{only for Agents}</p>
+
+
+</form>
+</div>
+</body>

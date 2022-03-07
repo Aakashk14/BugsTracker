@@ -1,0 +1,76 @@
+body {
+    margin: 0px;
+    overflow-x: hidden;
+  }
+          .main{
+              position: sticky;
+              background-color: rgb(2, 16, 71);
+              top: 0;
+              height:60px;
+              width: 100%;
+              z-index: 2;
+          }
+  
+.about,.panel{
+    position: absolute;
+    top:1px;
+    width: 500px;
+    display: inline-block;
+    left:70%;
+}
+#corner{
+    display: block;
+    background-color: rgb(203, 202, 228);
+    width: 100px;;
+    color:rgb(8, 7, 7);
+    position: relative;
+    left:50px;
+    top:10px;
+    border-radius: 2px;
+    padding-top: 5px;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#home,#message{
+    position: absolute;
+    left:1200px;
+    top:1px;
+    color: white;
+}
+
+
+#message{
+    left:500px;
+}
+.main p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.about p,.panel p {
+    color: white;
+    cursor: pointer;
+}
+.panel p:hover,
+.about p:hover{
+    outline: 0;
+    text-decoration: underline;
+}
+.panel {
+    left:90%;
+}
+#logout{
+    position: fixed;
+    left:40px;
+    width: 60px;
+    left:240px;
+    top:0px;
+    color: white;
+    cursor: pointer;
+}
+#logout:hover{
+    outline: 0;
+    text-decoration: underline;
+    
+}
